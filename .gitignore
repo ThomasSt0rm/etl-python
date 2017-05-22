@@ -2,3 +2,4 @@
 *.pyc
 # Ignore idea folder
 .idea
+.vscode
