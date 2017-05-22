@@ -17,4 +17,5 @@ class Extract_CSV:
         self.csvfile = csvfile
         reader = csv.reader(open(csvfile, 'rb'), delimiter=',')
         x = list(reader)
-        result = numpy.array(x).astype(float)
+        result = numpy.array(x)
+        return result

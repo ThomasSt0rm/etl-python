@@ -1,4 +1,5 @@
 import sys
+import os
 
 sys.path.append('extractor')
 sys.path.append('loader')
@@ -16,3 +17,9 @@ import transformer
 #loading_step = loader.Load()
 #loaded_number = loading_step.load(transformed_number)
 #print loaded_number
+
+while True:
+    for file in os.listdir('data-playground/input/'):
+        if file.lower().endswith('.csv'):
+            extract_step = extractor.Extract_CSV()
+            extracted_data = extract_step.read_csv(file)
