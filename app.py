@@ -13,6 +13,6 @@ extracted_number = extractor.Extract(raw_number)
 extracted_number.extract(raw_number)
 transformed_number = transformer.Transform(extracted_number)
 transformed_number.transform(extracted_number)
-loaded_number = loader.Load()
+loaded_number = loader.Load(extracted_number)
 loaded_number.load(transformed_number)
 print loaded_number
