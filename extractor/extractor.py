@@ -1,6 +1,7 @@
 class Extract:
-    def __init__(self, number):
-        self.number = number
+    def __init__(self):
+        #self.number = number
+        pass
 
     def extract(self, number):
         self.number = number
