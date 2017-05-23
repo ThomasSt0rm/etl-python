@@ -1,14 +1,4 @@
-import csv
 from collections import defaultdict
-
-
-
-class Transform:
-    def __init__(self):
-        pass
-
-    def transform(self, number):
-        return number + 1
 
 class Transform_CSV:
     def __init__(self):
