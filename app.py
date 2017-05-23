@@ -1,5 +1,6 @@
 import sys
 import os
+import yaml
 
 sys.path.append('extractor')
 sys.path.append('loader')
@@ -9,13 +10,18 @@ import extractor
 import loader
 import transformer
 
+with open("settings.yaml", 'r') as stream:
+    settings = yaml.load(stream)
 
-OutFile = 'data-playground/output/out.csv'
-InFile = 'data-playground/input/input.csv'
-#CSVFile = raw_input("Enter the path to CSV file: ")
-ExtractInstance = extractor.Extract_CSV()
-ExtractedData = ExtractInstance.extract(InFile)
-TransfromInstance = transformer.Transform_CSV()
-TransformedData = TransfromInstance.process_CSV(ExtractedData)
-LoadInstance = loader.Load_CSV()
-LoadData = LoadInstance.load(TransformedData, OutFile)
+print settings['ftp_csv']['datatype']
+
+
+for file in os.listdir(settings['ftp_csv']['datasource']):
+    if file.endswith('.csv'):
+        ExtractInstance = extractor.Extract_CSV()
+        ExtractedData = ExtractInstance.extract(settings['ftp_csv']['datasource'] + "/" + file)
+        TransformInstance = transformer.Transform_CSV()
+        TransformedData = TransformInstance.process_CSV(ExtractedData)
+        LoadInstance = loader.Load_CSV()
+        LoadData = LoadInstance.load(TransformedData, settings['ftp_csv']['datadest'] + "/output.csv")
+
