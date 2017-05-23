@@ -18,8 +18,17 @@ import transformer
 #loaded_number = loading_step.load(transformed_number)
 #print loaded_number
 
-while True:
-    for file in os.listdir('data-playground/input/'):
-        if file.lower().endswith('.csv'):
-            extract_step = extractor.Extract_CSV()
-            extracted_data = extract_step.read_csv(file)
+#while True:
+#    for file in os.listdir('data-playground/input/'):
+#        if file.lower().endswith('.csv'):
+#            extract_step = extractor.Extract_CSV()
+#            extracted_data = extract_step.read_csv(file)
+
+
+CSVFile = raw_input("Enter the path to CSV file: ")
+ExtractInstance = extractor.Extract_CSV()
+ExtractedData = ExtractInstance.read_csv(CSVFile)
+TransfromInstance = transformer.Transform_CSV()
+TranformedData = TransfromInstance.process_CSV(ExtractedData)
+print TranformedData
+print type(TranformedData)
