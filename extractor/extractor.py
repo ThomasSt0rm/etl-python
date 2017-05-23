@@ -7,6 +7,6 @@ class Extract_CSV:
 
     def extract(self, inputcsv):
         self.inputcsv = inputcsv
-        reader = csv.DictReader(open(inputcsv))
+        reader = csv.reader(open(inputcsv))
         return reader
 

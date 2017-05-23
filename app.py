@@ -10,11 +10,12 @@ import loader
 import transformer
 
 
-OutFile = 'data-playground/out/out.csv'
-CSVFile = raw_input("Enter the path to CSV file: ")
+OutFile = 'data-playground/output/out.csv'
+InFile = 'data-playground/input/input.csv'
+#CSVFile = raw_input("Enter the path to CSV file: ")
 ExtractInstance = extractor.Extract_CSV()
-ExtractedData = ExtractInstance.extract(CSVFile)
+ExtractedData = ExtractInstance.extract(InFile)
 TransfromInstance = transformer.Transform_CSV()
 TransformedData = TransfromInstance.process_CSV(ExtractedData)
 LoadInstance = loader.Load_CSV()
-LoadData = LoadInstance.load(TransformedData,OutFile)
+LoadData = LoadInstance.load(TransformedData, OutFile)

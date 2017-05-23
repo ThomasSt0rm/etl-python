@@ -7,7 +7,9 @@ class Load_CSV:
     def load(self, data, outfile):
         self.outfile = outfile
         self.data = data
-        with open(outfile, 'wb') as f:
-            w = csv.DictWriter(f, data.keys())
-            w.writeheader()
-            w.writerow(data)
+        #print data
+        key = data[0].keys()
+        with open(outfile, 'w') as file:
+            dict_writer = csv.DictWriter(file, key)
+            dict_writer.writeheader()
+            dict_writer.writerows(data)

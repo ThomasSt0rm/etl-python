@@ -6,14 +6,12 @@ class Transform_CSV:
 
     def process_CSV(self, csvdata):
         self.csvdata = csvdata
-        transformdict = defaultdict(list)
-        #print type(transformdict)
-        temp_list = []
+        transformedlist = []
+        count = 0
         for row in csvdata:
-            temp_list.append(row)
-        for dictionary in temp_list:
-            transformdict['ORDER_ID'].append(dictionary['ORDER_ID'])
-            transformdict['ORDER_LINE_ID'].append(dictionary['ORDER_LINE_ID'])
-            transformdict['ORDER_LINE_ITEM_ID'].append(dictionary['ORDER_LINE_ITEM_ID'])
-            transformdict['GROSS_MARGIN'].append(int(float(dictionary['SALES_PRICE'])) - int(float(dictionary['BASE_PRICE'])))
-        return transformdict
+            if count == 0:
+                count = count + 1
+            else:
+                x = {'ORDER_ID': row[0], 'ORDER_LINE_ID': row[1], 'ORDER_LINE_ITEM_ID': row[2], 'GROSS_MARGIN': int(float(row[10])) - int(float(row[9]))}
+                transformedlist.append(x)
+        return transformedlist
