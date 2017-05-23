@@ -1,5 +1,5 @@
 import csv
-import numpy
+
 
 class Extract_Basic:
     def __init__(self):
@@ -13,9 +13,9 @@ class Extract_CSV:
     def __init__(self):
         pass
 
-    def read_csv(self, csvfile):
-        self.csvfile = csvfile
-        reader = csv.reader(open(csvfile, 'rb'), delimiter=',')
-        x = list(reader)
-        result = numpy.array(x)
-        return result
+    def extract(self, inputcsv):
+        self.inputcsv = inputcsv
+        reader = csv.DictReader(open(inputcsv))
+        #print type(reader)
+        return reader
+                
