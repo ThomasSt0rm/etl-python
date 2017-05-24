@@ -1,0 +1,5 @@
+---
+ftp_csv:
+  datatype: csv
+  datasource: data-playground/input/
+  datadest: data-playground/output/
