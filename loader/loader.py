@@ -10,7 +10,7 @@ class LoadCSV:
         self.data = data
         key = data[0].keys()
         with open(outfile, 'w') as outfile:
-            dict_writer = csv.DictWriter(outfile, key)
+            dict_writer = csv.DictWriter(outfile, key, delimiter=',', lineterminator='\n')
             dict_writer.writeheader()
             dict_writer.writerows(data)
 
