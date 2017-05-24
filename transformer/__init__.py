@@ -1,1 +1,1 @@
-from transformer import TransformCSV
+from transformer import TransformCSV, TransformJSON

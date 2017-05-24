@@ -3,3 +3,7 @@ ftp_csv:
   datatype: csv
   datasource: data-playground/input/
   datadest: data-playground/output/
+ftp_json:
+  datatype: json
+  datasource: data-playground/input/
+  datadest: data-playground/output/

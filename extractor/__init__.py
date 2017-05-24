@@ -1,3 +1,3 @@
-from extractor import ExtractCSV
+from extractor import ExtractCSV, ExtractJSON
 
 

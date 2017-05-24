@@ -1,7 +1,7 @@
 import csv
 
 
-class LoadCSV:
+class Load:
     def __init__(self):
         pass
 
@@ -13,4 +13,4 @@ class LoadCSV:
             dict_writer = csv.DictWriter(outfile, key, delimiter=',', lineterminator='\n')
             dict_writer.writeheader()
             dict_writer.writerows(data)
-
+        return 0
