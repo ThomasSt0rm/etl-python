@@ -1,7 +1,7 @@
 import csv
 
 
-class Extract_CSV:
+class ExtractCSV:
     def __init__(self):
         pass
 

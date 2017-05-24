@@ -1,3 +1,3 @@
-from extractor import Extract_CSV
+from extractor import ExtractCSV
 
 
